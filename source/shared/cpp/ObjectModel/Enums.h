@@ -431,16 +431,4 @@ namespace AdaptiveSharedNamespace
 
     const std::string SentimentToString(Sentiment sentiment);
     Sentiment SentimentFromString(const std::string& sentiment);
-
-    template<typename T>
-    const std::unordered_map<std::string, T, CaseInsensitiveHash, CaseInsensitiveEqualTo>
-    GenerateStringToEnumMap(const std::unordered_map<T, std::string, EnumHash>& keyToStringMap)
-    {
-        std::unordered_map<std::string, T, CaseInsensitiveHash, CaseInsensitiveEqualTo> result;
-        for (auto& kv : keyToStringMap)
-        {
-            result[kv.second] = kv.first;
-        }
-        return result;
-    }
 }
